@@ -1,0 +1,29 @@
+using System;
+
+public class GFG{
+	static public void Main (){
+		//Code
+		int x = 8;
+		int[] arr={2,3,5,9};
+		printClosestPair(arr,x);
+	}
+	
+	static public void printClosestPair(int []arr,int product){
+	    int len=arr.Length;
+	    int reml=0,remr=len;
+	    int diff=999;
+	    for(int i =0; i<len/2;i++){
+	        for(int j=len-1;j>=len/2;j--){
+	            int newproduct = arr[i]*arr[j];
+	            if(Math.Abs(newproduct-8)<diff)
+	            {
+	                diff=Math.Abs(newproduct-8);
+	                reml=i;
+	                remr=j;
+	            }
+	        }
+	    }
+	    Console.WriteLine(arr[reml]);
+	    Console.WriteLine(arr[remr]);
+	}
+}
